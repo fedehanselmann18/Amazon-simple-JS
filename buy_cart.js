@@ -1,3 +1,6 @@
+import { cart } from "./data.js";
+import { appHeader } from "./header.js";
+
 function redirectButton() {
     const backButton = document.querySelector('.back-button');
     backButton.addEventListener('click', () => {
@@ -15,6 +18,7 @@ function buyButton() {
         else{
             alert('Thank you for your purchase!');
             localStorage.removeItem('cart');
+            localStorage.removeItem('products');
             window.location.href = 'amazon.html';
         }
         
@@ -23,8 +27,6 @@ function buyButton() {
 
 redirectButton()
 buyButton()
-
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function removeFromCart() {
     const removeFromCart = document.querySelectorAll('.remove-cart');
@@ -71,9 +73,10 @@ function purchaseData() {
         cart.forEach(product => {
             totalPrice += product.price;
         });
-        document.querySelector('.purchase-data').innerHTML = `<p class="purchase-text">Total: $${totalPrice}</p><p class="purchase-text">Products: ${totalProducts}</p>`;
+        document.querySelector('.purchase-data').innerHTML = `<p class="purchase-text">Total: $${totalPrice.toFixed(2)}</p><p class="purchase-text">Products: ${totalProducts}</p>`;
     }
 }
 
+appHeader()
 publishCart()
 purchaseData()
