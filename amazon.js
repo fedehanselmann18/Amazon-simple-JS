@@ -1,14 +1,6 @@
-import { products, cart } from './data.js';
-import { appHeader } from './header.js';
+import { products, cart , redirectButton} from './data.js';
+import { appHeader} from './header.js';
 
-function redirectButton() {
-    const buyButtons = document.querySelectorAll('.go-to-cart');
-    buyButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            window.location.href = 'buy_cart.html';
-        });
-    })
-}
 
 function addToCart() {
     const addToCart = document.querySelectorAll('.add-cart');
@@ -44,7 +36,8 @@ function publishProducts() {
     document.querySelector('.published-products').innerHTML = products.HTML;
 }
 
+
 appHeader()
 publishProducts()
-redirectButton()
 addToCart()
+redirectButton('buy_cart.html', '.go-to-cart')

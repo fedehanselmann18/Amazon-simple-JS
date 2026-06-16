@@ -4,9 +4,8 @@ export function appHeader() {
         <h1 class="logo">Amazon</h1>
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="amazon.html">Products</a></li>
+                <li><a href="buy_cart.html">Cart</a></li>
             </ul>
         </nav>
     `

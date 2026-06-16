@@ -29,3 +29,13 @@ const defaultProducts = [{
 
 export const products = JSON.parse(localStorage.getItem('products')) || defaultProducts;
 export const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+
+export function redirectButton(location, htmlElement) {
+    const buyButtons = document.querySelectorAll(htmlElement);
+    buyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            window.location.href = location;
+        });
+    })
+}

@@ -1,12 +1,6 @@
-import { cart } from "./data.js";
+import { cart, redirectButton } from "./data.js";
 import { appHeader } from "./header.js";
 
-function redirectButton() {
-    const backButton = document.querySelector('.back-button');
-    backButton.addEventListener('click', () => {
-        window.location.href = 'amazon.html';
-    });
-}
 
 function buyButton() {
     const buyButton = document.querySelector('.buy-button');
@@ -25,7 +19,7 @@ function buyButton() {
     });
 }
 
-redirectButton()
+redirectButton('amazon.html', '.back-button')
 buyButton()
 
 function removeFromCart() {
